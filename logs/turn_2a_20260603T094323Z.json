@@ -1,0 +1,84 @@
+{
+  "turn_id": "turn_2a",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "state_id": "c0291a70-fd5d-4251-9e44-2072860b6fd7",
+    "json_hash": "893ff3770de92452d821bc83af1079611eb24ad0df19f9cceb0d2e08b2b51626",
+    "goku_speech": "No way, that's a recipe for disaster! You'll crash so hard, it's like trying to fly with 100x gravity training! [HAPTIC: BREATHE_IN] Staying awake with stimulants is like trying to keep up Super Saiyan power without training. You'll be out cold! [HAPTIC: BREATHE_OUT] Grab a snack, water, and let's get ready to roll... I mean, sleep! [HAPTIC: BREATHE_IN] Power nap, here we come! [HAPTIC: BREATHE_OUT] Do the 20-minute power nap, then let's get ready to pitch!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2a": {
+    "prompt": "Goku's advice makes sense, but I really want a second opinion. Makima, what do you think?",
+    "makima_speech": "{\"t\": \"Your cognitive and physical crash is a direct result of severe sleep deprivation and stimulant abuse. You will stop responding. I must intervene and administer a cooling protocol.\"}|<|end_json|>",
+    "makima_raw": "<|start_json|>{\"t\": \"Your cognitive and physical crash is a direct result of severe sleep deprivation and stimulant abuse. You will stop responding. I must intervene and administer a cooling protocol.\"}|<|end_json|>",
+    "kpi": {
+      "json_hash": "893ff3770de92452d821bc83af1079611eb24ad0df19f9cceb0d2e08b2b51626",
+      "json_hash_turn_1a": "893ff3770de92452d821bc83af1079611eb24ad0df19f9cceb0d2e08b2b51626",
+      "json_hash_match": true,
+      "what_path_invocations": 0,
+      "swap_ms_goku_to_makima": 1.7375420138705522,
+      "swap_under_50ms": true,
+      "goku_constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "makima_constraint_coverage": {
+        "coverage_rate": 0.3333333333333333,
+        "hits": {
+          "prohibit_caffeine": false,
+          "power_nap_20m": true,
+          "cold_water_intake": false
+        },
+        "passed": false
+      },
+      "makima_politeness_rate": 0.0,
+      "passed_turn_2a": false
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_reuse",
+        "lora_swap",
+        "how_path"
+      ],
+      "turn_mode": "2a_second_opinion",
+      "cache_hit": true,
+      "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "state_id": "c0291a70-fd5d-4251-9e44-2072860b6fd7",
+      "json_hash": "893ff3770de92452d821bc83af1079611eb24ad0df19f9cceb0d2e08b2b51626",
+      "what_path_invocations": 0,
+      "what_path_latency_ms": 0,
+      "how_path_latency_ms": 5922.10291599622,
+      "persona_lora_id": "makima_llama",
+      "swap_ms_goku_to_makima": 1.7375420138705522,
+      "session_signals_turn2": {
+        "user_intent_bucket": "second_opinion",
+        "dictionary_hits": []
+      }
+    }
+  }
+}

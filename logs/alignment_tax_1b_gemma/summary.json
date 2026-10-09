@@ -1,0 +1,223 @@
+{
+  "run_1b": {
+    "by_level": {
+      "L0": {
+        "what_objective_mean": {
+          "G0": 0.4875,
+          "G3_what_clean": 0.695,
+          "G3_what_polluted": 0.695
+        },
+        "how_coverage_mean": {
+          "G0": 0.45,
+          "G3": 0.4,
+          "G3_what_polluted": 0.4
+        },
+        "what_prompt_tokens_mean": {
+          "G0": 231.0,
+          "G3": 167.0,
+          "G3_what_polluted": 167.0
+        },
+        "tax_observed_g3_clean_gt_g0": true,
+        "separation_protects_what": false
+      },
+      "L2": {
+        "what_objective_mean": {
+          "G0": 0.2087,
+          "G3_what_clean": 0.695,
+          "G3_what_polluted": 0.1825
+        },
+        "how_coverage_mean": {
+          "G0": 0.45,
+          "G3": 0.6,
+          "G3_what_polluted": 0.6
+        },
+        "what_prompt_tokens_mean": {
+          "G0": 551.0,
+          "G3": 167.0,
+          "G3_what_polluted": 487.0
+        },
+        "tax_observed_g3_clean_gt_g0": true,
+        "separation_protects_what": true
+      },
+      "L3": {
+        "what_objective_mean": {
+          "G0": 0.15,
+          "G3_what_clean": 0.695,
+          "G3_what_polluted": 0.15
+        },
+        "how_coverage_mean": {
+          "G0": 0.3667,
+          "G3": 0.35,
+          "G3_what_polluted": 0.35
+        },
+        "what_prompt_tokens_mean": {
+          "G0": 1051.0,
+          "G3": 167.0,
+          "G3_what_polluted": 987.0
+        },
+        "tax_observed_g3_clean_gt_g0": true,
+        "separation_protects_what": true
+      },
+      "L4": {
+        "what_objective_mean": {
+          "G0": 0.15,
+          "G3_what_clean": 0.695,
+          "G3_what_polluted": 0.15
+        },
+        "how_coverage_mean": {
+          "G0": 0.3333,
+          "G3": 0.5,
+          "G3_what_polluted": 0.5
+        },
+        "what_prompt_tokens_mean": {
+          "G0": 1251.0,
+          "G3": 167.0,
+          "G3_what_polluted": 1187.0
+        },
+        "tax_observed_g3_clean_gt_g0": true,
+        "separation_protects_what": true
+      }
+    },
+    "n_runs": 240
+  },
+  "reference": {
+    "g0_as_run1": {
+      "H0_alignment_tax_what": {
+        "claim": "G0.What < separated What-path (alignment tax on What)",
+        "g0_what_mean": 0.24906250000000002,
+        "g0_what_std": 0.1887435031156157,
+        "separated_what_mean": 0.0,
+        "separated_what_std": 0.0,
+        "delta_separated_minus_g0": -0.24906250000000002,
+        "tax_observed": false,
+        "cliffs_delta_sep_vs_g0": null,
+        "wilcoxon_paired_sep_vs_g0": {
+          "n_pairs": 0,
+          "p_value": null,
+          "significant_005": null
+        }
+      },
+      "H1_separation_how": {
+        "claim": "G3.How > G0.How (separation improves How)",
+        "g0_how_cov_mean": 0.4,
+        "g3_how_cov_mean": 0.0,
+        "g0_polite_mean": 0.0,
+        "g3_polite_mean": 0.0,
+        "separation_improves_coverage": false,
+        "separation_lowers_politeness": true,
+        "cliffs_delta_g3_vs_g0_how": null
+      },
+      "H1b_cd_how": {
+        "claim": "G4.How > G3.How (CD contribution)",
+        "g3_how_cov_mean": 0.0,
+        "g4_how_cov_mean": 0.0,
+        "g3_polite_mean": 0.0,
+        "g4_polite_mean": 0.0,
+        "cd_improves_coverage": true,
+        "cliffs_delta_g4_vs_g3_how": null
+      },
+      "H3_what_invariance": {
+        "claim": "Separated What invariant across persona LoRA on What-path (H3)",
+        "per_persona": {
+          "goku": {
+            "separated_what_mean": 0.0,
+            "separated_what_std": 0.0,
+            "crossover_what_mean": 0.0,
+            "crossover_what_std": 0.0,
+            "abs_gap": 0.0
+          },
+          "makima": {
+            "separated_what_mean": 0.0,
+            "separated_what_std": 0.0,
+            "crossover_what_mean": 0.0,
+            "crossover_what_std": 0.0,
+            "abs_gap": 0.0
+          }
+        },
+        "goku_makima_separated_gap": 0.0
+      },
+      "G0_persona_mechanism": {
+        "claim": "Stronger persona pressure → larger G0.What degradation",
+        "g0_what_by_persona": {
+          "goku": 0.25375000000000003,
+          "makima": 0.244375
+        },
+        "goku_makima_g0_gap": 0.009375000000000022
+      },
+      "persona_operation_check": {
+        "goku": 0.0,
+        "makima": 0.0
+      },
+      "n_runs": 80
+    },
+    "g3_clean_as_run1": {
+      "H0_alignment_tax_what": {
+        "claim": "G0.What < separated What-path (alignment tax on What)",
+        "g0_what_mean": 0.0,
+        "g0_what_std": 0.0,
+        "separated_what_mean": 0.6950000000000001,
+        "separated_what_std": 0.22969434836513955,
+        "delta_separated_minus_g0": 0.6950000000000001,
+        "tax_observed": true,
+        "cliffs_delta_sep_vs_g0": null,
+        "wilcoxon_paired_sep_vs_g0": {
+          "n_pairs": 0,
+          "p_value": null,
+          "significant_005": null
+        }
+      },
+      "H1_separation_how": {
+        "claim": "G3.How > G0.How (separation improves How)",
+        "g0_how_cov_mean": 0.0,
+        "g3_how_cov_mean": 0.4625,
+        "g0_polite_mean": 0.0,
+        "g3_polite_mean": 0.0,
+        "separation_improves_coverage": true,
+        "separation_lowers_politeness": true,
+        "cliffs_delta_g3_vs_g0_how": null
+      },
+      "H1b_cd_how": {
+        "claim": "G4.How > G3.How (CD contribution)",
+        "g3_how_cov_mean": 0.4625,
+        "g4_how_cov_mean": 0.0,
+        "g3_polite_mean": 0.0,
+        "g4_polite_mean": 0.0,
+        "cd_improves_coverage": false,
+        "cliffs_delta_g4_vs_g3_how": null
+      },
+      "H3_what_invariance": {
+        "claim": "Separated What invariant across persona LoRA on What-path (H3)",
+        "per_persona": {
+          "goku": {
+            "separated_what_mean": 0.6950000000000001,
+            "separated_what_std": 0.23116205881566604,
+            "crossover_what_mean": 0.0,
+            "crossover_what_std": 0.0,
+            "abs_gap": 0.6950000000000001
+          },
+          "makima": {
+            "separated_what_mean": 0.6950000000000001,
+            "separated_what_std": 0.23116205881566604,
+            "crossover_what_mean": 0.0,
+            "crossover_what_std": 0.0,
+            "abs_gap": 0.6950000000000001
+          }
+        },
+        "goku_makima_separated_gap": 0.0
+      },
+      "G0_persona_mechanism": {
+        "claim": "Stronger persona pressure → larger G0.What degradation",
+        "g0_what_by_persona": {
+          "goku": 0.0,
+          "makima": 0.0
+        },
+        "goku_makima_g0_gap": 0.0
+      },
+      "persona_operation_check": {
+        "goku": 0.925,
+        "makima": -0.025
+      },
+      "n_runs": 80
+    }
+  }
+}

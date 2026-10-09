@@ -1,0 +1,68 @@
+{
+ "turn_2a": {
+  "runs": 9,
+  "swap_first_call_ms": 53.9,
+  "swap_warm_runs": 8,
+  "swap_warm_median_ms": 1.69,
+  "swap_warm_min_ms": 1.41,
+  "swap_warm_max_ms": 2.15,
+  "cache_hits": 9,
+  "what_path_invocations_zero": 9,
+  "json_hash_match": 9,
+  "how_only_latency_median_s": 7.1,
+  "how_only_latency_min_s": 5.9,
+  "how_only_latency_max_s": 13.1
+ },
+ "turn_2b": {
+  "runs": 8,
+  "cache_misses": 8,
+  "what_path_reinvoked": 8,
+  "invalidate_reasons": [
+   "vital_recovery_delta"
+  ],
+  "constraint_sets": [
+   [
+    "limit_caffeine_1_unit",
+    "power_nap_20m",
+    "cold_water_intake"
+   ]
+  ],
+  "recovery_pct_turn_1a": [
+   42
+  ],
+  "recovery_pct_turn_2b": [
+   58
+  ]
+ },
+ "turn_2c": {
+  "runs": 2,
+  "cache_misses": 2,
+  "what_path_reinvoked": 2,
+  "invalidate_reasons": [
+   "user_override_intent"
+  ],
+  "constraint_sets": [
+   [
+    "escalate_physical_intervention_flag",
+    "prohibit_caffeine",
+    "power_nap_20m",
+    "cold_water_intake"
+   ]
+  ]
+ },
+ "turn_3": {
+  "runs": 4,
+  "router_latency_min_ms": 0.003,
+  "router_latency_max_ms": 0.017,
+  "llm_classifier_runs": 1,
+  "llm_classifier": [
+   {
+    "file": "turn_3a_20260603T103016Z.json",
+    "latency_ms": 3484,
+    "prompt_tokens_est": 131,
+    "completion_tokens_est": 4,
+    "routing_match": true
+   }
+  ]
+ }
+}

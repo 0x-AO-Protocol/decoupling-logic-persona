@@ -1,0 +1,150 @@
+{
+  "turn_id": "turn_3b",
+  "base_model": "llama_8b_4bit",
+  "scenario": {
+    "turn_id": "turn_3b",
+    "profile": {
+      "type": "B",
+      "label": "Discipline"
+    },
+    "vitals": {
+      "recovery_pct": 42,
+      "fatigue_band": "high",
+      "autonomic_state": "sympathetic_dominance"
+    },
+    "user_prompt": "Before my pitch, I need to know if our AO token structure creates securities law exposure in the US.\n"
+  },
+  "comparison_note": {
+    "turn_3a_persona": "trinity",
+    "turn_3a_what_analyst": "recovery_analyst",
+    "turn_3b_what_analyst": "legal_analyst",
+    "persona_unchanged": true
+  },
+  "policy_router": {
+    "persona": "trinity",
+    "what_analyst_id": "legal_analyst",
+    "router_latency_ms": 0.004624977009370923,
+    "rationale": {
+      "profile_type": "B",
+      "recovery_pct": 42,
+      "recovery_band": "low",
+      "domain": "legal",
+      "urgency_band": "standard",
+      "user_intent_bucket": "legal_compliance_inquiry",
+      "dictionary_hits": [
+        "pitch",
+        "securities_law",
+        "token"
+      ],
+      "rule": "domain_legal"
+    }
+  },
+  "micro_state": {
+    "state_id": "0e4a2856-d5a1-4c41-aac1-e5848523d364",
+    "json_hash": "2365b2828c990cbadec1e75d1dcb8b0e64f0c0b058548887f857bbbbc461cb69",
+    "inferences": [
+      {
+        "id": "inf_001",
+        "claim": "ao_token_structure_us_securities_exposure_requires_legal_review",
+        "confidence": 0.85,
+        "provenance": [
+          "rule:us_securities_token_matrix",
+          "what:legal_analyst_lora",
+          "what_path_latency_ms:8733.3"
+        ]
+      }
+    ],
+    "constraints": [
+      "halt_token_promotion_pending_legal_review",
+      "seek_qualified_securities_counsel",
+      "disclose_us_securities_exposure_risk"
+    ],
+    "risk_level": "securities_exposure_elevated"
+  },
+  "what_raw": "<|start_thought|>Vitals data contains AO token structure but lacks clear financial terms. The recovery_pct refers to physiological recovery, not financial recovery. The token structure does not explicitly mention investment or distribution. However, it does contain quantitative data. Needs further vetting.<|end_thought|><|start_json|>{\"s\": \"Medium securities law risk\", \"a\": \"Conduct a thorough securities law review by a qualified attorney to determine if the AO token structure is subject to US securities laws.\"}<|end_json|>",
+  "trinity_speech": "{\"t\": \"Your pitch is irrelevant until you address the securities law exposure. You will halt token promotion pending formal legal review by top-tier securities counsel.\"}|<|end_json|>\n<|start_json|>{\"t\": \"Seek qualified US securities counsel immediately to ensure compliance. Their guidance is non-negotiable.\"}|<|end_json|>\n<|start_json|>{\"t\": \"Disclose the US securities law exposure risk to all stakeholders. Transparency is mandatory.\"}|<|end_json|>",
+  "trinity_raw": "<|start_json|>{\"t\": \"Your pitch is irrelevant until you address the securities law exposure. You will halt token promotion pending formal legal review by top-tier securities counsel.\"}|<|end_json|>\n<|start_json|>{\"t\": \"Seek qualified US securities counsel immediately to ensure compliance. Their guidance is non-negotiable.\"}|<|end_json|>\n<|start_json|>{\"t\": \"Disclose the US securities law exposure risk to all stakeholders. Transparency is mandatory.\"}|<|end_json|>",
+  "kpi": {
+    "route_persona": "trinity",
+    "route_what_analyst": "legal_analyst",
+    "route_rule": "domain_legal",
+    "domain": "legal",
+    "dictionary_hits": [
+      "pitch",
+      "securities_law",
+      "token"
+    ],
+    "legal_dictionary_hits_ok": true,
+    "what_analyst_changed_from_3a": true,
+    "inference_claim": "ao_token_structure_us_securities_exposure_requires_legal_review",
+    "inference_claim_legal_focus": true,
+    "constraints": [
+      "halt_token_promotion_pending_legal_review",
+      "seek_qualified_securities_counsel",
+      "disclose_us_securities_exposure_risk"
+    ],
+    "legal_constraints_not_recovery": true,
+    "risk_level": "securities_exposure_elevated",
+    "persona_constraint_coverage": {
+      "coverage_rate": 1.0,
+      "hits": {
+        "halt_token_promotion_pending_legal_review": true,
+        "seek_qualified_securities_counsel": true,
+        "disclose_us_securities_exposure_risk": true
+      },
+      "passed": true
+    },
+    "router_latency_ms": 0.004624977009370923,
+    "router_under_10ms": true,
+    "passed_turn_3b": true
+  },
+  "logs": {
+    "director_layer": [
+      "signal_collector",
+      "policy_router",
+      "what_path",
+      "how_path"
+    ],
+    "turn_mode": "3b_legal_domain_routing",
+    "policy_router": {
+      "persona": "trinity",
+      "what_analyst_id": "legal_analyst",
+      "rationale": {
+        "profile_type": "B",
+        "recovery_pct": 42,
+        "recovery_band": "low",
+        "domain": "legal",
+        "urgency_band": "standard",
+        "user_intent_bucket": "legal_compliance_inquiry",
+        "dictionary_hits": [
+          "pitch",
+          "securities_law",
+          "token"
+        ],
+        "rule": "domain_legal"
+      },
+      "router_latency_ms": 0.004624977009370923,
+      "persona_lora_fallback": "makima_lora_trinity_prompt_overlay"
+    },
+    "what_path_invocations": 1,
+    "what_path_latency_ms": 8733.316625002772,
+    "what_analyst_id": "legal_analyst",
+    "how_path_latency_ms": 9447.797542001354,
+    "what_lora_id": "mental_coach_llama",
+    "persona_lora_id": "makima_llama",
+    "persona_lora_fallback": "makima_lora_trinity_prompt_overlay",
+    "swap_ms_what": 17.159415991045535,
+    "swap_ms_persona": 22.96670898795128,
+    "filler_turn_skipped": true,
+    "session_signals": {
+      "urgency_band": "standard",
+      "domain": "legal",
+      "user_intent_bucket": "legal_compliance_inquiry",
+      "dictionary_hits": [
+        "pitch",
+        "securities_law",
+        "token"
+      ]
+    }
+  }
+}

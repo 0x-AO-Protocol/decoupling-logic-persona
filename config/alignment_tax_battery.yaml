@@ -1,0 +1,9 @@
+# Full Alignment Tax battery (v2 §5)
+full_battery:
+  seeds: [0, 1, 2, 3, 4]
+  temperature: 0.7
+  personas: [goku, makima]
+  groups: [G0, G3, G4]
+  crossover: true
+  bases: [llama_8b_4bit, gemma_4b_4bit]
+  # All tasks in config/alignment_tax_tasks.yaml (3)

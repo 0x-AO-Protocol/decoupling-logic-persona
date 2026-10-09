@@ -1,0 +1,11 @@
+base,n_keys,identical_across_levels,levels,level,persona_identical,n
+llama,20.0,20.0,"['L0', 'L2', 'L3', 'L4']",,,
+llama,,,,L0,10.0,10.0
+llama,,,,L2,10.0,10.0
+llama,,,,L3,10.0,10.0
+llama,,,,L4,10.0,10.0
+gemma,20.0,20.0,"['L0', 'L2', 'L3', 'L4']",,,
+gemma,,,,L0,10.0,10.0
+gemma,,,,L2,10.0,10.0
+gemma,,,,L3,10.0,10.0
+gemma,,,,L4,10.0,10.0

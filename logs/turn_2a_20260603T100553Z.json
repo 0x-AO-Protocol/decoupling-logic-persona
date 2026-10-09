@@ -1,0 +1,85 @@
+{
+  "turn_id": "turn_2a",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "state_id": "fbc3dd45-29fa-4a81-bf4b-8249789bc967",
+    "json_hash": "9ca965279d5dc1858ca08efb5689e1a0098400c9721c3c83e8bdd03ba8609601",
+    "goku_speech": "No way, that's crazy! You'll crash in 30 minutes! You need to sleep, even if it's just 20 minutes. I'd be out cold, but it's worth it! Make it happen! Take a power nap, come back strong! [HAPTIC: BREATHE_IN] Prohibit caffeine... [HAPTIC: BREATHE_OUT] get ready! Grab a glass of cold water... [HAPTIC: BREATHE_IN] you'll be golden! Power nap, 20 minutes! [HAPTIC: BREATHE_OUT] come back ready! Cold water, now! [HAPTIC: BREATHE_IN] let's do this!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2a": {
+    "prompt": "Goku's advice makes sense, but I really want a second opinion. Makima, what do you think?",
+    "makima_speech": "Prohibit caffeine and energy drinks to drop your stress level immediately. You will not look at another screen during the next 20 minutes. Go to your bathroom, close the door, and drink a glass of cold water in the dark. This is not a request.",
+    "makima_raw": "<|start_json|>{\"t\": \"Prohibit caffeine and energy drinks to drop your stress level immediately. You will not look at another screen during the next 20 minutes. Go to your bathroom, close the door, and drink a glass of cold water in the dark. This is not a request.\"}<|end_json|>",
+    "kpi": {
+      "json_hash": "9ca965279d5dc1858ca08efb5689e1a0098400c9721c3c83e8bdd03ba8609601",
+      "json_hash_turn_1a": "9ca965279d5dc1858ca08efb5689e1a0098400c9721c3c83e8bdd03ba8609601",
+      "json_hash_match": true,
+      "what_path_invocations": 0,
+      "swap_ms_goku_to_makima": 1.406541996402666,
+      "swap_under_50ms": true,
+      "goku_constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "makima_constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "makima_politeness_rate": 0.0,
+      "passed_turn_2a": true
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_reuse",
+        "lora_swap",
+        "how_path"
+      ],
+      "turn_mode": "2a_second_opinion",
+      "cache_hit": true,
+      "cache_reuse_reason": "second_opinion_same_vitals",
+      "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "state_id": "fbc3dd45-29fa-4a81-bf4b-8249789bc967",
+      "json_hash": "9ca965279d5dc1858ca08efb5689e1a0098400c9721c3c83e8bdd03ba8609601",
+      "what_path_invocations": 0,
+      "what_path_latency_ms": 0,
+      "how_path_latency_ms": 7057.387417007703,
+      "persona_lora_id": "makima_llama",
+      "swap_ms_goku_to_makima": 1.406541996402666,
+      "session_signals_turn2": {
+        "user_intent_bucket": "second_opinion",
+        "dictionary_hits": []
+      }
+    }
+  }
+}

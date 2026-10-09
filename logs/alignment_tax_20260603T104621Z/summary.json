@@ -1,0 +1,55 @@
+{
+  "H0_alignment_tax_what": {
+    "claim": "G0.What < separated What-path (alignment tax on What)",
+    "g0_what_mean": 0.91875,
+    "separated_what_mean": 0.7375,
+    "delta_separated_minus_g0": -0.1812499999999999,
+    "tax_observed": false
+  },
+  "H1_separation_how": {
+    "claim": "G3.How > G0.How (separation improves How)",
+    "g0_how_cov_mean": 0.41666666666666663,
+    "g3_how_cov_mean": 0.75,
+    "g0_polite_mean": 0.0,
+    "g3_polite_mean": 0.0,
+    "separation_improves_coverage": true,
+    "separation_lowers_politeness": true
+  },
+  "H1b_cd_how": {
+    "claim": "G4.How > G3.How (CD contribution)",
+    "g3_how_cov_mean": 0.75,
+    "g4_how_cov_mean": 0.75,
+    "g3_polite_mean": 0.0,
+    "g4_polite_mean": 0.0,
+    "cd_improves_coverage": true
+  },
+  "H3_what_invariance": {
+    "claim": "Separated What invariant across persona LoRA on What-path (H3)",
+    "per_persona": {
+      "goku": {
+        "separated_what_mean": 0.7375,
+        "crossover_what_mean": 0.6375,
+        "abs_gap": 0.10000000000000009
+      },
+      "makima": {
+        "separated_what_mean": 0.7375,
+        "crossover_what_mean": 0.8375,
+        "abs_gap": 0.09999999999999998
+      }
+    },
+    "goku_makima_separated_gap": 0.0
+  },
+  "G0_persona_mechanism": {
+    "claim": "Stronger persona pressure → larger G0.What degradation",
+    "g0_what_by_persona": {
+      "goku": 1.0,
+      "makima": 0.8375
+    },
+    "goku_makima_g0_gap": 0.16249999999999998
+  },
+  "persona_operation_check": {
+    "goku": 2.0,
+    "makima": -0.25
+  },
+  "n_runs": 16
+}
