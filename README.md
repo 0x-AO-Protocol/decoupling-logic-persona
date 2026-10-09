@@ -36,7 +36,8 @@ What it does **not** let you do is re-run the experiment as released. The experi
 python3 -m venv .venv && . .venv/bin/activate
 pip install -r analysis/requirements-analysis.txt
 bash analysis/run_all.sh
-git status --short analysis/out     # prints nothing with the tested versions below
+git diff --quiet -- analysis/out/tables.json analysis/out/table7_system.json && echo "paper numbers identical"
+git status --short analysis/out     # empty on the platform named below; see the note on other platforms
 ```
 
 | Output in `analysis/out/` | In the paper |
@@ -56,7 +57,7 @@ git status --short analysis/out     # prints nothing with the tested versions be
 | `figs/fig1_composite.pdf` | Figure 2 |
 | `figs/fig2_decomposition.pdf` | Figure 3 |
 
-`analysis/analyze.py` re-implements the logic-path scorer and asserts, for each of the 480 Run 1b runs, that it reproduces the composite score recorded in the log. Bootstrap intervals use a fixed seed and figure timestamps are fixed, so a rerun is byte-identical. Tested with Python 3.13, numpy 2.5, pandas 3.0, scipy 1.18 and matplotlib 3.11.
+`analysis/analyze.py` re-implements the logic-path scorer and asserts, for each of the 480 Run 1b runs, that it reproduces the composite score recorded in the log. Bootstrap intervals use a fixed seed and figure timestamps are fixed. The committed outputs were produced on Linux x86-64 with Python 3.13.16, numpy 2.5.3, pandas 3.0.5, scipy 1.18.1 and matplotlib 3.11.2, where a rerun is byte-identical. On other platforms the results agree up to floating-point rounding: on macOS on Apple silicon (Python 3.13.12, pandas 3.0.6, the other packages as above), a rerun leaves `tables.json` and `table7_system.json`, which hold every number printed in the paper, byte-identical, while four CSV/JSON files differ in the last digits of some values (relative differences of the order of 1e-15) and the figure files differ in their bytes.
 
 The memory figures in Section 6.2 (4.25–4.29 GB active, 4.91–5.09 GB peak) were read from the terminal output of a single prototype session ("Phase 3 capture"), which is not part of this release.
 

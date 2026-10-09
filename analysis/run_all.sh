@@ -3,7 +3,7 @@
 # Usage (from the repository root):  bash analysis/run_all.sh
 # Requires: pip install -r analysis/requirements-analysis.txt   (no MLX, no model weights)
 set -euo pipefail
-export SOURCE_DATE_EPOCH=1791504000   # fixed PDF timestamps (2026-10-09 UTC) so reruns are byte-identical
+export SOURCE_DATE_EPOCH=1791504000   # fixed PDF timestamps (2026-10-09 UTC); see README on byte-identical reruns
 cd "$(dirname "$0")/.."
 LOGS=logs
 OUT=analysis/out
