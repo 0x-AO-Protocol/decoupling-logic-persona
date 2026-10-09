@@ -1,0 +1,27 @@
+# AO-DA v2 experiment groups (G0 / G3 / G4)
+# See docs/ORDER0.md and v2 verification plan.
+
+groups:
+  G0:
+    description: Single forward pass — Mental Coach LoRA + persona in system prompt (no Micro-State)
+    stages: 1
+    constrained_decoding: false
+    uses_micro_state: false
+  G3:
+    description: Stage1 What (mental_coach) → Stage2 How (persona LoRA); CD off
+    stages: 2
+    constrained_decoding: false
+    uses_micro_state: true
+  G4:
+    description: Same as G3 with constrained decoding on How pass
+    stages: 2
+    constrained_decoding: true
+    uses_micro_state: true
+
+personas:
+  - goku
+  - makima
+
+bases:
+  - llama_8b_4bit
+  - gemma_4b_4bit

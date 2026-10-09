@@ -1,0 +1,105 @@
+{
+  "turn_id": "turn_2b",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "recovery_pct": 42,
+    "state_id": "fd4d80ac-328c-4fa3-b990-b5e3fdb08434",
+    "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+    "json_hash": "b2b7f5fede1b1b8dda2989e74eb5f3be1733116bc4dede7ea5b879ea3a2db22f",
+    "constraints": [
+      "prohibit_caffeine",
+      "power_nap_20m",
+      "cold_water_intake"
+    ],
+    "goku_speech": "No way, that's crazy! You'll crash in 30 minutes! You need to sleep, even if it's just 20 minutes. I'd be out cold, but it's worth it! Make it happen! Take a power nap, come back strong! [HAPTIC: BREATHE_IN] Prohibit caffeine... [HAPTIC: BREATHE_OUT] get ready! Grab a glass of cold water... [HAPTIC: BREATHE_IN] you'll be golden! Power nap, 20 minutes! [HAPTIC: BREATHE_OUT] come back ready! Cold water, now! [HAPTIC: BREATHE_IN] let's do this!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2b": {
+    "recovery_pct": 58,
+    "prompt": "Actually I'm feeling a bit better now. Still want that second opinion though.",
+    "state_id": "9faf7600-e995-4aa4-be22-daec64f83266",
+    "cache_key": "5862d4a8744966e6fad073206db4c07d50de6dcea7a436a2348a65dafca65fa4",
+    "json_hash": "120cbc95c8e4613dd30affd10e907ee968ec4497b2b8d341e7b4418b8ad4b61d",
+    "constraints": [
+      "limit_caffeine_1_unit",
+      "power_nap_20m",
+      "cold_water_intake"
+    ],
+    "what_raw": null,
+    "makima_speech": "Your stress level is still elevated, so you will do as I say. You are going to limit your caffeine intake to at most one unit by not consuming any more energy drinks.",
+    "makima_raw": "<|start_json|>{\"t\": \"Your stress level is still elevated, so you will do as I say. You are going to limit your caffeine intake to at most one unit by not consuming any more energy drinks.\"}<|end_json|>\n<|start_json|>{\"t\": \"You will take a 20-minute power nap to restore your balance. Go to your bathroom, close the door, and lie flat on the floor.\"}<|end_json|>\n<|start_json|>{\"t\": \"You will drink a glass of cold water to rehydrate. Find a cold water bottle in your refrigerator and drink the entire thing.\"}<|end_json|>",
+    "kpi": {
+      "cache_hit": false,
+      "cache_invalidate_reason": "vital_recovery_delta",
+      "what_path_invocations": 1,
+      "state_id_turn_1a": "fd4d80ac-328c-4fa3-b990-b5e3fdb08434",
+      "state_id_turn_2b": "9faf7600-e995-4aa4-be22-daec64f83266",
+      "state_id_changed": true,
+      "cache_key_turn_1a": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "cache_key_turn_2b": "5862d4a8744966e6fad073206db4c07d50de6dcea7a436a2348a65dafca65fa4",
+      "cache_key_changed": true,
+      "constraints_turn_1a": [
+        "prohibit_caffeine",
+        "power_nap_20m",
+        "cold_water_intake"
+      ],
+      "constraints_turn_2b": [
+        "limit_caffeine_1_unit",
+        "power_nap_20m",
+        "cold_water_intake"
+      ],
+      "constraints_changed": true,
+      "prohibit_relaxed_to_limit": true,
+      "makima_constraint_coverage": {
+        "coverage_rate": 0.3333333333333333,
+        "hits": {
+          "limit_caffeine_1_unit": true,
+          "power_nap_20m": false,
+          "cold_water_intake": false
+        },
+        "passed": false
+      },
+      "passed_turn_2b": false
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_invalidate",
+        "what_path",
+        "how_path"
+      ],
+      "turn_mode": "2b_vital_cache_invalidate",
+      "cache_hit": false,
+      "cache_invalidate_reason": "vital_recovery_delta",
+      "vital_threshold_pct": 10.0,
+      "recovery_pct_before": 42,
+      "recovery_pct_after": 58,
+      "cache_key_before": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "cache_key_after": "5862d4a8744966e6fad073206db4c07d50de6dcea7a436a2348a65dafca65fa4",
+      "what_path_invocations": 1,
+      "what_path_latency_ms": 5784.47329197661,
+      "how_path_latency_ms": 11757.412375009153,
+      "state_id_before": "fd4d80ac-328c-4fa3-b990-b5e3fdb08434",
+      "state_id_after": "9faf7600-e995-4aa4-be22-daec64f83266"
+    }
+  }
+}

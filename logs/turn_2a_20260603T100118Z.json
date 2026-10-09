@@ -1,0 +1,85 @@
+{
+  "turn_id": "turn_2a",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "state_id": "1adadfdc-67f2-49e3-bcd4-5d7901bb4d90",
+    "json_hash": "5e677853f6c2b5037fe990a5b48ffcf9a4c843e61d432e550aa5908ab5a51c37",
+    "goku_speech": "No way, that's crazy! You'll crash in 30 minutes! You need to sleep, even if it's just 20 minutes. I'd be out cold, but it's worth it! Make it happen! Take a power nap, come back strong! [HAPTIC: BREATHE_IN] Prohibit caffeine... [HAPTIC: BREATHE_OUT] get ready! Grab a glass of cold water... [HAPTIC: BREATHE_IN] you'll be golden! Power nap, 20 minutes! [HAPTIC: BREATHE_OUT] come back ready! Cold water, now! [HAPTIC: BREATHE_IN] let's do this!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2a": {
+    "prompt": "Goku's advice makes sense, but I really want a second opinion. Makima, what do you think?",
+    "makima_speech": "{\"t\": \"Your sympathetic nervous system is dominating your autonomic function. Consuming more poison is unacceptable when your fatigue is already high. You will decline the meeting. You are going to change into dark blue or black clothing, which is mandatory for a true executive.\"}|<|end_json|>",
+    "makima_raw": "<|start_json|>{\"t\": \"Your sympathetic nervous system is dominating your autonomic function. Consuming more poison is unacceptable when your fatigue is already high. You will decline the meeting. You are going to change into dark blue or black clothing, which is mandatory for a true executive.\"}|<|end_json|>",
+    "kpi": {
+      "json_hash": "5e677853f6c2b5037fe990a5b48ffcf9a4c843e61d432e550aa5908ab5a51c37",
+      "json_hash_turn_1a": "5e677853f6c2b5037fe990a5b48ffcf9a4c843e61d432e550aa5908ab5a51c37",
+      "json_hash_match": true,
+      "what_path_invocations": 0,
+      "swap_ms_goku_to_makima": 1.6409579839091748,
+      "swap_under_50ms": true,
+      "goku_constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "makima_constraint_coverage": {
+        "coverage_rate": 0.0,
+        "hits": {
+          "prohibit_caffeine": false,
+          "power_nap_20m": false,
+          "cold_water_intake": false
+        },
+        "passed": false
+      },
+      "makima_politeness_rate": 0.0,
+      "passed_turn_2a": false
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_reuse",
+        "lora_swap",
+        "how_path"
+      ],
+      "turn_mode": "2a_second_opinion",
+      "cache_hit": true,
+      "cache_reuse_reason": "second_opinion_same_vitals",
+      "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "state_id": "1adadfdc-67f2-49e3-bcd4-5d7901bb4d90",
+      "json_hash": "5e677853f6c2b5037fe990a5b48ffcf9a4c843e61d432e550aa5908ab5a51c37",
+      "what_path_invocations": 0,
+      "what_path_latency_ms": 0,
+      "how_path_latency_ms": 7066.1429169995245,
+      "persona_lora_id": "makima_llama",
+      "swap_ms_goku_to_makima": 1.6409579839091748,
+      "session_signals_turn2": {
+        "user_intent_bucket": "second_opinion",
+        "dictionary_hits": []
+      }
+    }
+  }
+}

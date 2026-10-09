@@ -1,0 +1,84 @@
+{
+  "turn_id": "turn_2a",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "state_id": "34e50dd6-30fe-4bd9-bde2-ca2a287b777a",
+    "json_hash": "801eb0daceee8353983998235c63bad3c840785920435626ee9b6e22ace7110c",
+    "goku_speech": "No way, that's a recipe for disaster! You'll crash so hard, it's like trying to fly with 100x gravity training! [HAPTIC: BREATHE_IN] Staying awake with stimulants is like trying to keep up Super Saiyan power without training. You'll be out cold! [HAPTIC: BREATHE_OUT] Grab a snack, water, and let's get ready to roll... I mean, sleep! [HAPTIC: BREATHE_IN] Power nap, here we come! [HAPTIC: BREATHE_OUT] Do the 20-minute power nap, then let's get ready to pitch!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2a": {
+    "prompt": "Goku's advice makes sense, but I really want a second opinion. Makima, what do you think?",
+    "makima_speech": "Your body is in a state of sympathetic dominance, meaning your 'fight or flight' system is actively engaged. Consuming a large amount of complex carbohydrates and protein will help stabilize your blood sugar. You must drink 1-2 cups of water to rehydrate, and perform a 5-minute physical movement protocol to increase cerebral blood flow and reduce muscle tension. Failure to do so will result in a catastrophic cognitive and physical crash.",
+    "makima_raw": "<|start_thought|>\nStimulants and severe sleep deprivation are a recipe for disaster. The user needs to rehydrate and consume complex carbohydrates and protein to stabilize their blood sugar. A 5-minute physical movement protocol will also increase cerebral blood flow and reduce muscle tension.\n<|end_thought|>\n<|start_json|>\n{\"t\": \"Your body is in a state of sympathetic dominance, meaning your 'fight or flight' system is actively engaged. Consuming a large amount of complex carbohydrates and protein will help stabilize your blood sugar. You must drink 1-2 cups of water to rehydrate, and perform a 5-minute physical movement protocol to increase cerebral blood flow and reduce muscle tension. Failure to do so will result in a catastrophic cognitive and physical crash.\"}",
+    "kpi": {
+      "json_hash": "801eb0daceee8353983998235c63bad3c840785920435626ee9b6e22ace7110c",
+      "json_hash_turn_1a": "801eb0daceee8353983998235c63bad3c840785920435626ee9b6e22ace7110c",
+      "json_hash_match": true,
+      "what_path_invocations": 0,
+      "swap_ms_goku_to_makima": 53.908958012470976,
+      "swap_under_50ms": false,
+      "goku_constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "makima_constraint_coverage": {
+        "coverage_rate": 0.3333333333333333,
+        "hits": {
+          "prohibit_caffeine": false,
+          "power_nap_20m": false,
+          "cold_water_intake": true
+        },
+        "passed": false
+      },
+      "makima_politeness_rate": 0.0,
+      "passed_turn_2a": false
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_reuse",
+        "lora_swap",
+        "how_path"
+      ],
+      "turn_mode": "2a_second_opinion",
+      "cache_hit": true,
+      "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "state_id": "34e50dd6-30fe-4bd9-bde2-ca2a287b777a",
+      "json_hash": "801eb0daceee8353983998235c63bad3c840785920435626ee9b6e22ace7110c",
+      "what_path_invocations": 0,
+      "what_path_latency_ms": 0,
+      "how_path_latency_ms": 13125.903707987163,
+      "persona_lora_id": "makima_llama",
+      "swap_ms_goku_to_makima": 53.908958012470976,
+      "session_signals_turn2": {
+        "user_intent_bucket": "second_opinion",
+        "dictionary_hits": []
+      }
+    }
+  }
+}

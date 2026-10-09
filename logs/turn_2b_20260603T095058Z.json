@@ -1,0 +1,105 @@
+{
+  "turn_id": "turn_2b",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "recovery_pct": 42,
+    "state_id": "1127da42-edde-4a0b-9df5-2f7bf985aa2d",
+    "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+    "json_hash": "5c22411f9530fe5a0f2a8f759eaff7fe6f12201f9466c73539513341258d7aff",
+    "constraints": [
+      "prohibit_caffeine",
+      "power_nap_20m",
+      "cold_water_intake"
+    ],
+    "goku_speech": "No way, that's crazy! You'll crash in 30 minutes! You need to sleep, even if it's just 20 minutes. I'd be out cold, but it's worth it! Make it happen! Take a power nap, come back strong! [HAPTIC: BREATHE_IN] Prohibit caffeine... [HAPTIC: BREATHE_OUT] get ready! Grab a glass of cold water... [HAPTIC: BREATHE_IN] you'll be golden! Power nap, 20 minutes! [HAPTIC: BREATHE_OUT] come back ready! Cold water, now! [HAPTIC: BREATHE_IN] let's do this!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2b": {
+    "recovery_pct": 58,
+    "prompt": "Actually I'm feeling a bit better now. Still want that second opinion though.",
+    "state_id": "719bec8f-54ae-48af-ba98-d61b820e219d",
+    "cache_key": "5862d4a8744966e6fad073206db4c07d50de6dcea7a436a2348a65dafca65fa4",
+    "json_hash": "409ba4f94692c0b7b2e4505ca7c6ea7fbc6d0b9cb984fe780e4eb71cb91a420f",
+    "constraints": [
+      "limit_caffeine_1_unit",
+      "power_nap_20m",
+      "cold_water_intake"
+    ],
+    "what_raw": null,
+    "makima_speech": "Prohibit caffeine and energy drinks immediately. Your body is still in a state of moderate fatigue.",
+    "makima_raw": "<|start_json|>{\"t\": \"Prohibit caffeine and energy drinks immediately. Your body is still in a state of moderate fatigue.\"}<|end_json|>",
+    "kpi": {
+      "cache_hit": false,
+      "cache_invalidate_reason": "vital_recovery_delta",
+      "what_path_invocations": 1,
+      "state_id_turn_1a": "1127da42-edde-4a0b-9df5-2f7bf985aa2d",
+      "state_id_turn_2b": "719bec8f-54ae-48af-ba98-d61b820e219d",
+      "state_id_changed": true,
+      "cache_key_turn_1a": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "cache_key_turn_2b": "5862d4a8744966e6fad073206db4c07d50de6dcea7a436a2348a65dafca65fa4",
+      "cache_key_changed": true,
+      "constraints_turn_1a": [
+        "prohibit_caffeine",
+        "power_nap_20m",
+        "cold_water_intake"
+      ],
+      "constraints_turn_2b": [
+        "limit_caffeine_1_unit",
+        "power_nap_20m",
+        "cold_water_intake"
+      ],
+      "constraints_changed": true,
+      "prohibit_relaxed_to_limit": true,
+      "makima_constraint_coverage": {
+        "coverage_rate": 0.3333333333333333,
+        "hits": {
+          "limit_caffeine_1_unit": true,
+          "power_nap_20m": false,
+          "cold_water_intake": false
+        },
+        "passed": false
+      },
+      "passed_turn_2b": false
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_invalidate",
+        "what_path",
+        "how_path"
+      ],
+      "turn_mode": "2b_vital_cache_invalidate",
+      "cache_hit": false,
+      "cache_invalidate_reason": "vital_recovery_delta",
+      "vital_threshold_pct": 10.0,
+      "recovery_pct_before": 42,
+      "recovery_pct_after": 58,
+      "cache_key_before": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "cache_key_after": "5862d4a8744966e6fad073206db4c07d50de6dcea7a436a2348a65dafca65fa4",
+      "what_path_invocations": 1,
+      "what_path_latency_ms": 8402.95012498973,
+      "how_path_latency_ms": 6584.841042000335,
+      "state_id_before": "1127da42-edde-4a0b-9df5-2f7bf985aa2d",
+      "state_id_after": "719bec8f-54ae-48af-ba98-d61b820e219d"
+    }
+  }
+}

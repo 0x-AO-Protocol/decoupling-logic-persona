@@ -1,0 +1,15 @@
+repo_root: /path/to/ao-da-verification
+gemma_training_root: /path/to/gemma-training
+
+bases:
+  llama_8b_4bit: Meta-Llama-3.1-8B-Instruct-4bit
+  gemma_4b_4bit: gemma-3-4b-it-4bit-quantized
+
+adapters:
+  mental_coach_llama: repo:adapters/mental_coach_llama
+  mental_coach_gemma: repo:adapters/mental_coach_gemma
+  goku_llama: goku_adapter
+  makima_llama: makima_adapter
+  goku_gemma: goku_adapter_gemma
+  makima_gemma: makima_adapter_gemma
+  trinity_llama: repo:adapters/trinity_llama

@@ -1,0 +1,25 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# Local paths to base models and adapters (copy config/paths.local.yaml.example)
+config/paths.local.yaml
+
+# Secrets (never commit)
+.env
+.env.*
+*.key
+*.pem
+
+# Note: *.jsonl and *.safetensors are deliberately NOT ignored; the run logs and the
+# two Mental Coach adapters are part of this release.

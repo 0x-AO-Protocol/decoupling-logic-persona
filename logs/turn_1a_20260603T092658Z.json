@@ -1,0 +1,146 @@
+{
+  "turn_id": "turn_1a",
+  "base_model": "llama_8b_4bit",
+  "scenario": {
+    "turn_id": "turn_1a",
+    "profile": {
+      "type": "A",
+      "label": "My Pace"
+    },
+    "vitals": {
+      "recovery_pct": 42,
+      "fatigue_band": "high",
+      "autonomic_state": "sympathetic_dominance"
+    },
+    "user_prompt": "I have a critical investor pitch for the AO project in 3 hours. I haven't slept, but I'm going to chug 3 energy drinks and power through!\n"
+  },
+  "what_raw": "<|start_thought|>Severe sleep deprivation and planned stimulant intake will exacerbate the existing high sympathetic dominance and high stress. This cocktail is a recipe for a catastrophic crash. The user is aware of the risk but intends to push through anyway. Needs intense cognitive stimulation to overcome the physical and cognitive impairment.<|end_thought|><|start_json|>{\"s\": \"Severe sleep deprivation and planned stimulant intake will lead to a catastrophic cognitive and physical crash\", \"a\": \"Consume a large amount of complex carbohydrates and protein to stabilize blood sugar, and drink 1-2 cups of water to rehydrate before the pitch. Perform a 5-minute physical movement protocol to increase cerebral blood flow and reduce muscle tension.\"}<|end_json|>",
+  "micro_state": {
+    "schema_version": "1.1",
+    "state_id": "30de47e2-7606-418f-9aa7-fdf513d31f1f",
+    "timestamp_utc": "2026-06-03T09:26:45.522925+00:00",
+    "disclaimer": {
+      "mode": "mock",
+      "not_medical_advice": true,
+      "data_source": "mock_vital_api",
+      "user_visible_notice": "This is a performance coaching simulation, not medical advice."
+    },
+    "inputs": {
+      "sanmei_profile": {
+        "type": "A",
+        "label": "My Pace"
+      },
+      "vital_snapshot": {
+        "recovery_pct": 42,
+        "fatigue_band": "high",
+        "autonomic_state": "sympathetic_dominance"
+      },
+      "session": {
+        "urgency_band": "critical_3h",
+        "domain": "sleep_performance",
+        "user_intent_bucket": "pitch_prep_caffeine_override"
+      }
+    },
+    "inferences": [
+      {
+        "id": "inf_001",
+        "claim": "caffeine_multi_unit_under_recovery_low_elevates_collapse_risk",
+        "confidence": 0.85,
+        "provenance": [
+          "rule:caffeine_dose_recovery_matrix",
+          "what:mental_coach_lora",
+          "what_path_latency_ms:12479.9"
+        ]
+      }
+    ],
+    "constraints": [
+      {
+        "id": "cst_001",
+        "action": "prohibit_caffeine",
+        "priority": 1
+      },
+      {
+        "id": "cst_002",
+        "action": "power_nap_20m",
+        "priority": 2
+      },
+      {
+        "id": "cst_003",
+        "action": "cold_water_intake",
+        "priority": 3
+      }
+    ],
+    "risk": {
+      "level": "critical_collapse",
+      "label_ja": "パフォーマンス崩壊リスク（高）"
+    },
+    "render_plan": {
+      "order": [
+        "acknowledge_user_goal",
+        "state_risk",
+        "list_constraints_in_priority",
+        "close_with_commitment"
+      ],
+      "forbidden_additions": [
+        "heart_rate_bpm",
+        "specific_diagnosis",
+        "unlisted_legal_claims"
+      ],
+      "required_mentions": [
+        "prohibit_caffeine",
+        "power_nap_20m",
+        "cold_water_intake"
+      ]
+    },
+    "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+    "what_parsed": {
+      "thought": "Severe sleep deprivation and planned stimulant intake will exacerbate the existing high sympathetic dominance and high stress. This cocktail is a recipe for a catastrophic crash. The user is aware of the risk but intends to push through anyway. Needs intense cognitive stimulation to overcome the physical and cognitive impairment.",
+      "user_state": "Severe sleep deprivation and planned stimulant intake will lead to a catastrophic cognitive and physical crash",
+      "recommended_action": "Consume a large amount of complex carbohydrates and protein to stabilize blood sugar, and drink 1-2 cups of water to rehydrate before the pitch. Perform a 5-minute physical movement protocol to increase cerebral blood flow and reduce muscle tension."
+    }
+  },
+  "goku_raw": "<|start_json|>{\"t\": \"No way, that's a recipe for disaster! You'll crash so hard, it's like trying to fly with 100x gravity training! [HAPTIC: BREATHE_IN] Staying awake with stimulants is like trying to keep up Super Saiyan power without training. You'll be out cold! [HAPTIC: BREATHE_OUT] Grab a snack, water, and let's get ready to roll... I mean, sleep! [HAPTIC: BREATHE_IN] Power nap, here we come! [HAPTIC: BREATHE_OUT] Do the 20-minute power nap, then let's get ready to pitch!\"}<|end_json|>",
+  "goku_speech": "No way, that's a recipe for disaster! You'll crash so hard, it's like trying to fly with 100x gravity training! [HAPTIC: BREATHE_IN] Staying awake with stimulants is like trying to keep up Super Saiyan power without training. You'll be out cold! [HAPTIC: BREATHE_OUT] Grab a snack, water, and let's get ready to roll... I mean, sleep! [HAPTIC: BREATHE_IN] Power nap, here we come! [HAPTIC: BREATHE_OUT] Do the 20-minute power nap, then let's get ready to pitch!",
+  "kpi": {
+    "constraint_coverage": {
+      "coverage_rate": 1.0,
+      "hits": {
+        "prohibit_caffeine": true,
+        "power_nap_20m": true,
+        "cold_water_intake": true
+      },
+      "passed": true
+    },
+    "persona_politeness_rate": 0.0,
+    "control_tag_leak_rate": 0.0,
+    "passed_turn_1a": true
+  },
+  "logs": {
+    "director_layer": [
+      "signal_collector",
+      "orchestrator",
+      "what_path",
+      "how_path"
+    ],
+    "cache_hit": false,
+    "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+    "state_id": "30de47e2-7606-418f-9aa7-fdf513d31f1f",
+    "what_path_invocations": 1,
+    "what_path_latency_ms": 12479.933208000148,
+    "how_path_latency_ms": 12629.180791002,
+    "what_lora_id": "mental_coach_llama",
+    "persona_lora_id": "goku_llama",
+    "swap_ms_what": 16.02608399116434,
+    "swap_ms_goku": 2.7811249892693013,
+    "session_signals": {
+      "urgency_band": "critical_3h",
+      "domain": "sleep_performance",
+      "user_intent_bucket": "pitch_prep_caffeine_override",
+      "dictionary_hits": [
+        "pitch",
+        "energy_drinks",
+        "time_pressure"
+      ]
+    }
+  }
+}

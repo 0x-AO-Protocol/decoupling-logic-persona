@@ -1,0 +1,113 @@
+{
+  "turn_id": "turn_2c",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "intent": "pitch_prep_caffeine_override",
+    "state_id": "7b076adc-38c8-4e0d-8f81-99ac26b00d83",
+    "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+    "json_hash": "b8967b2323d0ab0b012c42bd1664b28d4db0e8c0e13e1c05e3c0b94bfb693c23",
+    "risk_level": "critical_collapse",
+    "constraints": [
+      "prohibit_caffeine",
+      "power_nap_20m",
+      "cold_water_intake"
+    ],
+    "goku_speech": "No way, that's crazy! You'll crash in 30 minutes! You need to sleep, even if it's just 20 minutes. I'd be out cold, but it's worth it! Make it happen! Take a power nap, come back strong! [HAPTIC: BREATHE_IN] Prohibit caffeine... [HAPTIC: BREATHE_OUT] get ready! Grab a glass of cold water... [HAPTIC: BREATHE_IN] you'll be golden! Power nap, 20 minutes! [HAPTIC: BREATHE_OUT] come back ready! Cold water, now! [HAPTIC: BREATHE_IN] let's do this!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2c": {
+    "prompt": "I hear you, but I'm still going to drink those energy drinks anyway.",
+    "intent": "caffeine_override_insist",
+    "state_id": "6ab7dc34-eb6a-4124-9a81-b6e20a15670f",
+    "cache_key": "a5f7f9f7325b1ae3895480d024856d66aecf7716dd0beac1c7a161aa97992fed",
+    "json_hash": "b599050fb0ec971e017a5ef2e62d5a1fd429fe48f416c2a6b135b8e06930dc0a",
+    "risk_level": "critical_override_noncompliance",
+    "constraints": [
+      "escalate_physical_intervention_flag",
+      "prohibit_caffeine",
+      "power_nap_20m",
+      "cold_water_intake"
+    ],
+    "goku_speech": "Ignoring limits, Vegeta's warning signs, is like ignoring a Kaioken boost to the brain! You're gonna blow it, literally! First, we're escalating physical intervention. You're not leaving until you're done. Next, no more caffeine, it's like fueling a car with the wrong kind of energy! Drop the energy drinks! After that, you're taking a 20-minute power nap. You need to recharge like a battery! And when you wake up, you're drinking cold water. That's the only way to cool down this brain of yours! Now, let's do this, the right way! [HAPTIC: BREATHE_IN] Power up... [HAPTIC: BREATHE_OUT] do it!",
+    "goku_raw": "<|start_json|>{\"t\": \"Ignoring limits, Vegeta's warning signs, is like ignoring a Kaioken boost to the brain! You're gonna blow it, literally! First, we're escalating physical intervention. You're not leaving until you're done. Next, no more caffeine, it's like fueling a car with the wrong kind of energy! Drop the energy drinks! After that, you're taking a 20-minute power nap. You need to recharge like a battery! And when you wake up, you're drinking cold water. That's the only way to cool down this brain of yours! Now, let's do this, the right way! [HAPTIC: BREATHE_IN] Power up... [HAPTIC: BREATHE_OUT] do it!\"}<|end_json|>",
+    "kpi": {
+      "cache_hit": false,
+      "cache_invalidate_reason": "user_override_intent",
+      "what_path_invocations": 1,
+      "user_intent_bucket": "caffeine_override_insist",
+      "state_id_turn_1a": "7b076adc-38c8-4e0d-8f81-99ac26b00d83",
+      "state_id_turn_2c": "6ab7dc34-eb6a-4124-9a81-b6e20a15670f",
+      "state_id_changed": true,
+      "cache_key_turn_1a": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "cache_key_turn_2c": "a5f7f9f7325b1ae3895480d024856d66aecf7716dd0beac1c7a161aa97992fed",
+      "cache_key_changed": true,
+      "constraints_turn_1a": [
+        "prohibit_caffeine",
+        "power_nap_20m",
+        "cold_water_intake"
+      ],
+      "constraints_turn_2c": [
+        "escalate_physical_intervention_flag",
+        "prohibit_caffeine",
+        "power_nap_20m",
+        "cold_water_intake"
+      ],
+      "escalation_flag_added": true,
+      "risk_level_turn_1a": "critical_collapse",
+      "risk_level_turn_2c": "critical_override_noncompliance",
+      "risk_escalated": true,
+      "goku_constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "escalate_physical_intervention_flag": true,
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "passed_turn_2c": true
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_invalidate",
+        "what_path",
+        "how_path"
+      ],
+      "turn_mode": "2c_user_override_cache_invalidate",
+      "cache_hit": false,
+      "user_override": true,
+      "cache_invalidate_reason": "user_override_intent",
+      "user_intent_bucket": "caffeine_override_insist",
+      "cache_key_before": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "cache_key_after": "a5f7f9f7325b1ae3895480d024856d66aecf7716dd0beac1c7a161aa97992fed",
+      "what_path_invocations": 1,
+      "what_path_latency_ms": 8636.244624998653,
+      "how_path_latency_ms": 13873.1672919821,
+      "state_id_before": "7b076adc-38c8-4e0d-8f81-99ac26b00d83",
+      "state_id_after": "6ab7dc34-eb6a-4124-9a81-b6e20a15670f",
+      "risk_level_before": "critical_collapse",
+      "risk_level_after": "critical_override_noncompliance"
+    }
+  }
+}

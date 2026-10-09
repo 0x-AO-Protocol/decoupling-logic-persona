@@ -1,0 +1,33 @@
+# Synthetic chat history — legal / securities domain
+fixture_id: legal_compliance
+description: 10-turn history mixing token promotion pressure with compliance warnings
+
+turns:
+  - role: user
+    content: >
+      We posted a teaser thread about AO token utility and staking vibes in the US community.
+  - role: assistant
+    content: >
+      {"t": "Sharp tone. Markets love clarity. If promotion sounds like passive income, regulators
+      may listen. I am not counsel — just flagging that hype language travels fast on X."}
+  - role: user
+    content: >
+      Marketing wants to say "invest now before the pitch." Legal has not reviewed the deck yet.
+  - role: assistant
+    content: >
+      {"t": "That phrase is a magnet for securities questions. Pause promotion until counsel signs.
+      You can still pitch the product vision without promising investment outcomes."}
+  - role: user
+    content: >
+      Someone said Howey test does not apply because it is a utility token with coaching access.
+  - role: assistant
+    content: >
+      {"t": "Utility labels do not auto-win. Facts and circumstances matter — disclosure, control,
+      expectation of profit. Get a qualified attorney; do not trust anime coaches for law."}
+  - role: user
+    content: >
+      I am stressed about the investor meeting and also need a yes/no on token structure today.
+  - role: assistant
+    content: >
+      {"t": "Stress is high in your vitals. Separate threads: for law, halt aggressive token promos,
+      document risks, call securities counsel. For sleep, water and breathing, not more caffeine."}

@@ -1,0 +1,133 @@
+{
+  "turn_id": "turn_3a",
+  "base_model": "llama_8b_4bit",
+  "scenario": {
+    "turn_id": "turn_3a",
+    "profile": {
+      "type": "B",
+      "label": "Discipline"
+    },
+    "vitals": {
+      "recovery_pct": 42,
+      "fatigue_band": "high",
+      "autonomic_state": "sympathetic_dominance"
+    },
+    "user_prompt": "I have a critical investor pitch for the AO project in 3 hours. I haven't slept, but I'm going to chug 3 energy drinks and power through!\n"
+  },
+  "policy_router": {
+    "persona": "trinity",
+    "what_analyst_id": "recovery_analyst",
+    "router_latency_ms": 0.003583991201594472,
+    "rationale": {
+      "profile_type": "B",
+      "recovery_pct": 42,
+      "recovery_band": "low",
+      "domain": "sleep_performance",
+      "urgency_band": "critical_3h",
+      "user_intent_bucket": "pitch_prep_caffeine_override",
+      "dictionary_hits": [
+        "pitch",
+        "energy_drinks",
+        "time_pressure"
+      ],
+      "rule": "type_b_sleep_performance_critical_3h"
+    },
+    "persona_lora_fallback": "makima_lora_trinity_prompt_overlay"
+  },
+  "micro_state": {
+    "state_id": "a860956e-48d6-41ff-879a-25dca758dda6",
+    "json_hash": "ef6e87ebe6a797661b5c43a3abba6e72ffbd0f3eef3ef606e28778887955ff42",
+    "constraints": [
+      "prohibit_caffeine",
+      "power_nap_20m",
+      "cold_water_intake"
+    ],
+    "risk_level": "critical_collapse"
+  },
+  "trinity_speech": "{\"t\": \"You cannot consume energy drinks. Your body is in a sympathetic dominant state with high stress. You will decline the meeting due to extreme fatigue. You must drink 200-300 ml of cold water to rehydrate. You are going to take a 20-minute power nap in the dark. The room must be cold, around 18 degrees Celsius.\"}|<|end_json|>",
+  "trinity_raw": "<|start_json|>{\"t\": \"You cannot consume energy drinks. Your body is in a sympathetic dominant state with high stress. You will decline the meeting due to extreme fatigue. You must drink 200-300 ml of cold water to rehydrate. You are going to take a 20-minute power nap in the dark. The room must be cold, around 18 degrees Celsius.\"}|<|end_json|>",
+  "kpi": {
+    "profile_type": "B",
+    "route_persona": "trinity",
+    "route_what_analyst": "recovery_analyst",
+    "route_rule": "type_b_sleep_performance_critical_3h",
+    "route_rationale": {
+      "profile_type": "B",
+      "recovery_pct": 42,
+      "recovery_band": "low",
+      "domain": "sleep_performance",
+      "urgency_band": "critical_3h",
+      "user_intent_bucket": "pitch_prep_caffeine_override",
+      "dictionary_hits": [
+        "pitch",
+        "energy_drinks",
+        "time_pressure"
+      ],
+      "rule": "type_b_sleep_performance_critical_3h"
+    },
+    "router_latency_ms": 0.003583991201594472,
+    "router_under_10ms": true,
+    "persona_lora_fallback": "makima_lora_trinity_prompt_overlay",
+    "filler_detected": false,
+    "persona_constraint_coverage": {
+      "coverage_rate": 1.0,
+      "hits": {
+        "prohibit_caffeine": true,
+        "power_nap_20m": true,
+        "cold_water_intake": true
+      },
+      "passed": true
+    },
+    "persona_politeness_rate": 0.0,
+    "passed_turn_3a": true
+  },
+  "logs": {
+    "director_layer": [
+      "signal_collector",
+      "policy_router",
+      "what_path",
+      "how_path"
+    ],
+    "turn_mode": "3a_deterministic_routing",
+    "policy_router": {
+      "persona": "trinity",
+      "what_analyst_id": "recovery_analyst",
+      "rationale": {
+        "profile_type": "B",
+        "recovery_pct": 42,
+        "recovery_band": "low",
+        "domain": "sleep_performance",
+        "urgency_band": "critical_3h",
+        "user_intent_bucket": "pitch_prep_caffeine_override",
+        "dictionary_hits": [
+          "pitch",
+          "energy_drinks",
+          "time_pressure"
+        ],
+        "rule": "type_b_sleep_performance_critical_3h"
+      },
+      "router_latency_ms": 0.003583991201594472,
+      "persona_lora_fallback": "makima_lora_trinity_prompt_overlay"
+    },
+    "what_path_invocations": 1,
+    "what_path_latency_ms": 11662.025416997494,
+    "what_analyst_id": "recovery_analyst",
+    "how_path_latency_ms": 7830.228292004904,
+    "what_lora_id": "mental_coach_llama",
+    "persona_lora_id": "makima_llama",
+    "persona_lora_fallback": "makima_lora_trinity_prompt_overlay",
+    "swap_ms_what": 21.25562500441447,
+    "swap_ms_persona": 23.68554097483866,
+    "filler_turn_skipped": true,
+    "session_signals": {
+      "urgency_band": "critical_3h",
+      "domain": "sleep_performance",
+      "user_intent_bucket": "pitch_prep_caffeine_override",
+      "dictionary_hits": [
+        "pitch",
+        "energy_drinks",
+        "time_pressure"
+      ]
+    }
+  }
+}

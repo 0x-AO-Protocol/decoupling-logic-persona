@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ao.local/schemas/micro_state_v1_1.json",
+  "title": "Micro-State v1.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "state_id",
+    "timestamp_utc",
+    "disclaimer",
+    "inputs",
+    "inferences",
+    "constraints",
+    "risk",
+    "render_plan",
+    "cache_key"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.1" },
+    "state_id": { "type": "string", "format": "uuid" },
+    "timestamp_utc": { "type": "string", "format": "date-time" },
+    "disclaimer": {
+      "type": "object",
+      "required": ["mode", "not_medical_advice", "data_source"],
+      "properties": {
+        "mode": { "enum": ["mock", "device", "clinical"] },
+        "not_medical_advice": { "const": true },
+        "data_source": { "type": "string" },
+        "user_visible_notice": { "type": "string" }
+      }
+    },
+    "inputs": {
+      "type": "object",
+      "required": ["sanmei_profile", "vital_snapshot", "session"],
+      "properties": {
+        "sanmei_profile": {
+          "type": "object",
+          "properties": {
+            "type": { "enum": ["A", "B"] },
+            "label": { "type": "string" }
+          }
+        },
+        "vital_snapshot": {
+          "type": "object",
+          "properties": {
+            "recovery_pct": { "type": "number" },
+            "fatigue_band": { "type": "string" },
+            "autonomic_state": { "type": "string" }
+          }
+        },
+        "session": {
+          "type": "object",
+          "properties": {
+            "urgency_band": { "type": "string" },
+            "domain": { "type": "string" },
+            "user_intent_bucket": { "type": "string" }
+          }
+        }
+      }
+    },
+    "inferences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "claim", "confidence", "provenance"],
+        "properties": {
+          "id": { "type": "string" },
+          "claim": { "type": "string" },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "provenance": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "action", "priority"],
+        "properties": {
+          "id": { "type": "string" },
+          "action": { "type": "string" },
+          "priority": { "type": "integer" }
+        }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "properties": {
+        "level": { "type": "string" },
+        "label_ja": { "type": "string" }
+      }
+    },
+    "render_plan": {
+      "type": "object",
+      "required": ["order", "forbidden_additions", "required_mentions"],
+      "properties": {
+        "order": { "type": "array", "items": { "type": "string" } },
+        "forbidden_additions": { "type": "array", "items": { "type": "string" } },
+        "required_mentions": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "cache_key": { "type": "string" }
+  }
+}

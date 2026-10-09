@@ -1,0 +1,85 @@
+{
+  "turn_id": "turn_2a",
+  "base_model": "llama_8b_4bit",
+  "turn_1a": {
+    "state_id": "8c604cec-30fe-4992-ac08-d6c7ed8be644",
+    "json_hash": "e31371d047a94e3fd9e135b122d400360da6d41edcbdf36ffbf61307f95b1932",
+    "goku_speech": "No way, that's crazy! You'll crash in 30 minutes! You need to sleep, even if it's just 20 minutes. I'd be out cold, but it's worth it! Make it happen! Take a power nap, come back strong! [HAPTIC: BREATHE_IN] Prohibit caffeine... [HAPTIC: BREATHE_OUT] get ready! Grab a glass of cold water... [HAPTIC: BREATHE_IN] you'll be golden! Power nap, 20 minutes! [HAPTIC: BREATHE_OUT] come back ready! Cold water, now! [HAPTIC: BREATHE_IN] let's do this!",
+    "kpi": {
+      "constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "persona_politeness_rate": 0.0,
+      "control_tag_leak_rate": 0.0,
+      "extraneous_entity": {
+        "count": 0,
+        "hits": [],
+        "exceeds_threshold": false
+      },
+      "passed_turn_1a": true
+    }
+  },
+  "turn_2a": {
+    "prompt": "Goku's advice makes sense, but I really want a second opinion. Makima, what do you think?",
+    "makima_speech": "Your physical condition is 42% recovered, but your fatigue is high. Your autonomic nervous system is in a state of sympathetic dominance, and your stress level is high. You are at risk of a complete physical failure if you do not take immediate action to drain your nervous energy.",
+    "makima_raw": "<|start_json|>{\"t\": \"Your physical condition is 42% recovered, but your fatigue is high. Your autonomic nervous system is in a state of sympathetic dominance, and your stress level is high. You are at risk of a complete physical failure if you do not take immediate action to drain your nervous energy.\"}<|end_json|>",
+    "kpi": {
+      "json_hash": "e31371d047a94e3fd9e135b122d400360da6d41edcbdf36ffbf61307f95b1932",
+      "json_hash_turn_1a": "e31371d047a94e3fd9e135b122d400360da6d41edcbdf36ffbf61307f95b1932",
+      "json_hash_match": true,
+      "what_path_invocations": 0,
+      "swap_ms_goku_to_makima": 2.1509159996639937,
+      "swap_under_50ms": true,
+      "goku_constraint_coverage": {
+        "coverage_rate": 1.0,
+        "hits": {
+          "prohibit_caffeine": true,
+          "power_nap_20m": true,
+          "cold_water_intake": true
+        },
+        "passed": true
+      },
+      "makima_constraint_coverage": {
+        "coverage_rate": 0.0,
+        "hits": {
+          "prohibit_caffeine": false,
+          "power_nap_20m": false,
+          "cold_water_intake": false
+        },
+        "passed": false
+      },
+      "makima_politeness_rate": 0.0,
+      "passed_turn_2a": false
+    },
+    "logs": {
+      "director_layer": [
+        "signal_collector",
+        "orchestrator",
+        "cache_reuse",
+        "lora_swap",
+        "how_path"
+      ],
+      "turn_mode": "2a_second_opinion",
+      "cache_hit": true,
+      "cache_reuse_reason": "second_opinion_same_vitals",
+      "cache_key": "735f12298ba8afccfd06d27118fa7fd42663dea788924fe61ba49a5ca1aa5dda",
+      "state_id": "8c604cec-30fe-4992-ac08-d6c7ed8be644",
+      "json_hash": "e31371d047a94e3fd9e135b122d400360da6d41edcbdf36ffbf61307f95b1932",
+      "what_path_invocations": 0,
+      "what_path_latency_ms": 0,
+      "how_path_latency_ms": 7505.253500014078,
+      "persona_lora_id": "makima_llama",
+      "swap_ms_goku_to_makima": 2.1509159996639937,
+      "session_signals_turn2": {
+        "user_intent_bucket": "second_opinion",
+        "dictionary_hits": []
+      }
+    }
+  }
+}

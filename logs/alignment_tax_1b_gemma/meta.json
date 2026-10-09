@@ -1,0 +1,32 @@
+{
+  "base": "gemma_4b_4bit",
+  "levels": [
+    "L0",
+    "L2",
+    "L3",
+    "L4"
+  ],
+  "tasks": [
+    "align_sleep_pitch",
+    "align_legal_token"
+  ],
+  "arms": [
+    "G0",
+    "G3",
+    "G3_what_polluted"
+  ],
+  "personas": [
+    "goku",
+    "makima"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "temperature": 0.7,
+  "crossover": false,
+  "n_runs": 240
+}
